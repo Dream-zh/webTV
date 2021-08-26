@@ -1,18 +1,22 @@
 <template>
+<!-- 视频播放主要界面 -->
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ms-video msg="@/components/Video.vue"></ms-video>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Video from '@/components/Video.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    msVideo: Video,
   }
 }
 </script>
+
+<style scoped>
+
+</style>
