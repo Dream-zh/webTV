@@ -3,7 +3,7 @@
     <div class="nav">
       <ms-nav msg="@/components/nav.vue"></ms-nav>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -15,20 +15,28 @@ export default {
   components: {
     msNav: Nav,
   },
+  created() {
+    this.$socket.emit("createRoom", "123");
+  },
+  sockets: {
+    createRoom(message) {
+      this.$store.commit("changeRoomId", message.key);
+    },
+  },
 };
 </script>
 
 <style lang="less">
 // 字体设置
 @font-face {
-    font-family: miaowu;
-    src: url("./assets/typeface/FZMiaoWu.TTF");
+  font-family: miaowu;
+  src: url("./assets/typeface/FZMiaoWu.TTF");
 }
-#app{
+#app {
   font-family: miaowu;
 }
 // 去除滚动条
 ::-webkit-scrollbar {
-     width: 0 !important;
+  width: 0 !important;
 }
 </style>
